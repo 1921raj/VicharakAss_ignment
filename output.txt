@@ -1,0 +1,164 @@
+
+=== GENERATED ASSEMBLY LANGUAGE CODE===
+; SimpleLang Compiler Output
+; Generated Assembly for 8-bit CPU
+
+; Declare variable: a at address $128
+
+; Declare variable: b at address $129
+
+; Declare variable: c at address $130
+
+; Assignment: a
+    LDA #30  ; Load immediate value
+    STA $128  ; Store to variable a
+
+; Assignment: b
+    LDA #20  ; Load immediate value
+    STA $129  ; Store to variable b
+
+; Assignment: c
+    LDA $128  ; Load variable a
+    PHA              ; Push left operand
+    LDA $129  ; Load variable b
+    TAX              ; Transfer A to X
+    PLA              ; Pop left operand
+    ADC X            ; Add X to A
+    STA $130  ; Store to variable c
+
+; If statement
+    LDA $130  ; Load variable c
+    PHA              ; Push left operand
+    LDA #30  ; Load immediate value
+    TAX              ; Transfer A to X
+    PLA              ; Pop left operand
+    CMP X            ; Compare A with X
+    BNE L0    ; Branch if not equal (condition false)
+; Assignment: c
+    LDA $130  ; Load variable c
+    PHA              ; Push left operand
+    LDA #1  ; Load immediate value
+    TAX              ; Transfer A to X
+    PLA              ; Pop left operand
+    ADC X            ; Add X to A
+    STA $130  ; Store to variable c
+
+
+
+
+
+
+==============================================================================================================================================================================
+
+
+
+
+
+
+SimpleLang Compiler for 8-bit CPU
+=================================
+
+Compiling example program...
+
+=== LEXICAL ANALYSIS ===
+Token: 0 'int' at line 3
+Token: 1 'a' at line 3
+Token: 12 ';' at line 3
+Token: 0 'int' at line 4
+Token: 1 'b' at line 4
+Token: 12 ';' at line 4
+Token: 0 'int' at line 5
+Token: 1 'c' at line 5
+Token: 12 ';' at line 5
+Token: 1 'a' at line 8
+Token: 3 '=' at line 8
+Token: 2 '30' at line 8
+Token: 12 ';' at line 8
+Token: 1 'b' at line 9
+Token: 3 '=' at line 9
+Token: 2 '20' at line 9
+Token: 12 ';' at line 9
+Token: 1 'c' at line 10
+Token: 3 '=' at line 10
+Token: 1 'a' at line 10
+Token: 4 '+' at line 10
+Token: 1 'b' at line 10
+Token: 12 ';' at line 10
+Token: 6 'if' at line 13
+Token: 8 '(' at line 13
+Token: 1 'c' at line 13
+Token: 7 '==' at line 13
+Token: 2 '30' at line 13
+Token: 9 ')' at line 13
+Token: 10 '{' at line 13
+Token: 1 'c' at line 14
+Token: 3 '=' at line 14
+Token: 1 'c' at line 14
+Token: 4 '+' at line 14
+Token: 2 '1' at line 14
+Token: 12 ';' at line 14
+Token: 11 '}' at line 15
+Token: 14 '' at line 16
+
+=== SYNTAX ANALYSIS ===
+Parser error: Parse error at line 16: unexpected token in statement
+Abstract Syntax Tree generated successfully
+
+=== CODE GENERATION ===
+
+=== GENERATED ASSEMBLY ===
+; SimpleLang Compiler Output
+; Generated Assembly for 8-bit CPU
+
+; Declare variable: a at address $128
+
+; Declare variable: b at address $129
+
+; Declare variable: c at address $130
+
+; Assignment: a
+    LDA #30  ; Load immediate value
+    STA $128  ; Store to variable a
+
+; Assignment: b
+    LDA #20  ; Load immediate value
+    STA $129  ; Store to variable b
+
+; Assignment: c
+    LDA $128  ; Load variable a
+    PHA              ; Push left operand
+    LDA $129  ; Load variable b
+    TAX              ; Transfer A to X
+    PLA              ; Pop left operand
+    ADC X            ; Add X to A
+    STA $130  ; Store to variable c
+
+; If statement
+    LDA $130  ; Load variable c
+    PHA              ; Push left operand
+    LDA #30  ; Load immediate value
+    TAX              ; Transfer A to X
+    PLA              ; Pop left operand
+    CMP X            ; Compare A with X
+    BNE L0    ; Branch if not equal (condition false)
+; Assignment: c
+    LDA $130  ; Load variable c
+    PHA              ; Push left operand
+    LDA #1  ; Load immediate value
+    TAX              ; Transfer A to X
+    PLA              ; Pop left operand
+    ADC X            ; Add X to A
+    STA $130  ; Store to variable c
+
+L0:
+
+
+    HLT              ; Halt the processor
+Assembly code saved to output.asm
+
+
+L0:
+
+
+    HLT              ; Halt the processor
+Assembly code saved to output.asm
